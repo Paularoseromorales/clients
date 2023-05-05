@@ -1,1 +1,8 @@
-<p>edit client</p>
+<h1>Edit client</h1>
+<%= form_with model: @client do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <%= f.submit %>
+<% end %>

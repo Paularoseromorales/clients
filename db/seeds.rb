@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts 'starting seed'
+Client.destroy_all
+
+puts 'creating 5 clients'
+
+5.times do
+  Client.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name
+  )
+end

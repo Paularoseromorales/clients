@@ -1,1 +1,10 @@
-<p>show clients</p>
+
+<p><%= @client.first_name.concat(" #{@client.last_name}") %></p>
+
+<%= link_to "Delete",
+  client_path(@client),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+
+<%= link_to("Edit", edit_client_path) %>
+<%= link_to("Ver todos los Clientes", clients_path) %>
