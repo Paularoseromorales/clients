@@ -1,8 +1,7 @@
-<h1>new client</h1>
-<%= form_with model: @client do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+<h1>Add a new client</h1>
+
+<%= simple_form_for(@client) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
   <%= f.submit %>
 <% end %>

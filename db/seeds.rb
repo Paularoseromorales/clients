@@ -16,3 +16,5 @@ puts 'creating 5 clients'
     last_name: Faker::Name.last_name
   )
 end
+
+puts 'Finished!'
