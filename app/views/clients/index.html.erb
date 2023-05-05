@@ -1,27 +1,33 @@
-<h1>All clients</h1>
-
-<table class="table table-striped table-bordered table-hover">
-  <thead class="table-dark">
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @clients.each do |client| %>
+<br>
+<div class="container-sm">
+  <div class="border border-1">
+    <div class="text-center p-3 mb-2 bg-secondary text-white">
+      <h1>Client's List</h1>
+    </div>
+  </div>
+  <table class="table table-striped table-bordered table-hover ">
+    <thead class="table-dark">
       <tr>
-        <td><%=client.first_name %>
-        </td>
-        <td><%=client.last_name %>
-        </td>
-        <td><%= link_to "Show", client %></td>
-
-        <td><%= link_to "Delete",client_path(client.id),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></td>
-
+        <th>First name</th>
+        <th>Last name</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<p><%= link_to("New client ", new_client_path, class: "btn btn-secondary") %></p>
+    </thead>
+
+    <tbody>
+      <% @clients.each do |client| %>
+        <tr>
+          <td><%=client.first_name %>
+          </td>
+          <td><%=client.last_name %>
+          </td>
+          <td><%= link_to "Show", client %></td>
+
+          <td><%= link_to "Delete",client_path(client.id),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <p><%= link_to("New client ", new_client_path, class: "btn btn-secondary") %></p>
+</div>

@@ -1,20 +1,24 @@
-
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://www.latercera.com/resizer/9Yo9YIAEMo7t9hQTNUgPa9mgE-8=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/Z2NK6DYAPBHO3BVPUE25LQ22ZA.jpg" class="img-fluid rounded-start" alt="..." width= 600px>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"><%= @client.first_name.concat(" #{@client.last_name}") %></h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<br>
+<div class="container d-flex align-items-center justify-content-center max-w-50">
+  <div class="card mb-3 " style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://www.latercera.com/resizer/9Yo9YIAEMo7t9hQTNUgPa9mgE-8=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/Z2NK6DYAPBHO3BVPUE25LQ22ZA.jpg" class="img-fluid rounded-start" alt="..." width= 600px>
       </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= @client.first_name.concat(" #{@client.last_name}") %></h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            <div>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <%= link_to("Go back to Clients", clients_path, class: "btn btn-secondary") %>
+      <%= link_to("Edit", edit_client_path, class: "btn btn-secondary mr-2") %>
     </div>
   </div>
 </div>
-
-
-
-<%= link_to("Edit", edit_client_path, class: "btn btn-secondary") %>
-<%= link_to("Go back to Clients", clients_path, class: "btn btn-secondary") %>

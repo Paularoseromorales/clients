@@ -1,0 +1,14 @@
+<br>
+<div class="container d-flex align-items-center justify-content-center max-w-50">
+  <div class="card border border-5 shadow p-3 mb-5 bg-body rounded">
+    <div class="card-body">
+      <h1 class="card-title">Client</h1>
+      <br>
+      <%= simple_form_for(@client, html: { class: 'mx-auto' }) do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

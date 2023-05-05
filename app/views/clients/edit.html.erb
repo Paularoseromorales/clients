@@ -1,7 +1,1 @@
-<br>
-<h1>Edit Client</h1>
-<%= simple_form_for(@client) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.submit %>
-<% end %>
+<%= render "form", client: @client %>
