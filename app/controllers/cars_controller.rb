@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   before_action :set_client, only: %i[new create]
 
   def new
-    @car = Client.new
+    @car = Car.new
   end
 
   def create
