@@ -26,16 +26,22 @@
   </div>
 
   <div>
-    <h2>Cars</h2>
-    <ul class="list-group">
+    <div>
+      <h2>Cars</h2>
+      <ul class="list-group">
       <% @client.cars.each do |car| %>
         <li class="list-group-item">
           <strong>Brand:</strong> <%= car.brand %><br>
           <strong>Model:</strong> <%= car.model %>
+          <%= link_to "Delete", car_path(car), method: :delete, data: { confirm: "Are you sure?" } %>
         </li>
       <% end %>
-    </ul>
+      </ul>
+      <br>
+
+    </div>
     <br>
+
   </div>
 
 

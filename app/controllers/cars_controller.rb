@@ -15,6 +15,12 @@ class CarsController < ApplicationController
     end
   end
 
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+    redirect_to client_path(@car.client), status: :see_other
+  end
+
   private
 
   def set_client
