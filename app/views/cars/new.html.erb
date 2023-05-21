@@ -1,0 +1,10 @@
+
+<h1>New car</h1>
+
+<%= form_with model: @car, url: client_cars_path(@client) do |form| %>
+  <%= form.label :brand %>
+  <%= form.text_field :brand %>
+   <%= form.label :model %>
+  <%= form.text_field :model %>
+  <%= form.submit "Add car" %>
+<% end %>

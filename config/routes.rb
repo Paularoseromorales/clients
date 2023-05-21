@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :clients
+  get 'cars/new'
+  resources :clients do
+    resources :cars, only: %i[new create]
+  end
 end
