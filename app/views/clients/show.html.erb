@@ -1,7 +1,7 @@
 <br>
 <body class="bg-success p-2 text-dark bg-opacity-10">
-   <div class="container d-flex align-items-center justify-content-center max-w-50 -sm">
-  <div class="card mb-3 card border-success mb-3 border border-3 " style="max-width: 540px;">
+  <div class="container d-flex align-items-center justify-content-center max-w-50 -sm">
+    <div class="card mb-3 card border-success mb-3 border border-3 " style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="https://img1.freepng.es/20180809/qvb/kisspng-delta-computers-rentals-clip-art-computer-icons-photo-icons-matt-symbol-png-image-picpng-5b6ce7aa28da27.9546927915338638501673.jpg" class="img-fluid rounded-start" alt="..." width= 600px>
@@ -22,29 +22,22 @@
       <%= link_to("Edit", edit_client_path, class: "btn btn-success opacity-90") %>
       <%= link_to "Add car", new_client_car_path(client_id: @client.id), class: "btn btn-success opacity-90" %>
     </div>
-  </div>
-  </div>
-
-  <div>
-    <div>
-      <h2>Cars</h2>
-      <ul class="list-group">
-      <% @client.cars.each do |car| %>
-        <li class="list-group-item">
-          <strong>Brand:</strong> <%= car.brand %><br>
-          <strong>Model:</strong> <%= car.model %>
-          <%= link_to "Delete", car_path(car),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        </li>
-      <% end %>
-      </ul>
-      <br>
-
     </div>
-    <br>
-
   </div>
 
 
 
+  <div class="container d-flex justify-content-center">
 
+    <% @client.cars.each do |car| %>
+    <div class="card mb-3 border-success mb-3 border border-3" style="max-width: 10rem; display: inline-block; margin-right: 30px;">
+      <img src="https://cdn.shopify.com/s/files/1/0518/0309/5239/products/lamborghini-veneno-remote-controlled-car-orange-852_800x.jpg?v=1677109651" class="card-img-top" alt="Car Image">
+      <div class="card-body">
+        <h5 class="card-title"><%= car.brand %></h5>
+        <p class="card-text"><strong>Model:</strong> <%= car.model %></p>
+        <%= link_to "Delete", car_path(car),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </body>
