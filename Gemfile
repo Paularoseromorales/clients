@@ -33,6 +33,8 @@ gem 'faker'
 
 gem 'bootstrap', '~> 5.3.0.alpha3'
 
+gem 'devise', '~> 4.9', '>= 4.9.2'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
