@@ -1,10 +1,17 @@
+<br>
 
-<h1>New car</h1>
-
-<%= form_with model: @car, url: client_cars_path(@client) do |form| %>
-  <%= form.label :brand %>
-  <%= form.text_field :brand %>
-   <%= form.label :model %>
-  <%= form.text_field :model %>
-  <%= form.submit "Add car" %>
-<% end %>
+<body class="bg-success p-2 text-dark bg-opacity-10">
+  <div class="container d-flex align-items-center justify-content-center max-w-50">
+    <div class="card border border-3 border border-success mb-5 bg-body rounded">
+      <div class="card-body">
+        <h1 class="text-center">New car</h1>
+        <%= simple_form_for [@client, @car] do |form| %>
+          <%= form.input :brand %>
+          <%= form.input :model %>
+          <%= form.button :submit, "Add car", class: "btn btn-primary" %>
+        <% end %>
+        <br>
+      </div>
+    </div>
+  </div>
+</body>
