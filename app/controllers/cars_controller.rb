@@ -9,7 +9,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     @car.client = @client
     if @car.save
-      redirect_to client_path(@client)
+      redirect_to client_path(@client), notice: 'Your car was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -18,7 +18,7 @@ class CarsController < ApplicationController
   def destroy
     @car = Car.find(params[:id])
     @car.destroy
-    redirect_to client_path(@car.client), status: :see_other
+    redirect_to client_path(@car.client), status: :see_other, alert: 'Your car has been deleted'
   end
 
   private
